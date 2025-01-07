@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Roman Rossi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .skill-category {
+            margin-bottom: 2rem;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background-color: #e1e4e8;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+        }
+
+        .skill-level {
+            height: 100%;
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1>Technical Skills & Expertise</h1>
+
+                <div class="card">
+                    <h2>Programming Languages</h2>
+                    <div class="skill-grid">
+                        <div class="skill-category">
+                            <h3>Core Languages</h3>
+                            <div>
+                                <p>Java</p>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <p>Python</p>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <p>C & C++</p>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Web Technologies</h3>
+                            <div>
+                                <p>JavaScript</p>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <p>HTML/CSS</p>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <p>SQL</p>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Development Tools & Technologies</h2>
+                    <div class="skill-grid">
+                        <div class="skill-category">
+                            <h3>IDEs & Development Tools</h3>
+                            <ul>
+                                <li>Eclipse</li>
+                                <li>NetBeans</li>
+                                <li>Visual Studio</li>
+                                <li>jGRASP</li>
+                                <li>Oracle APEX</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Version Control & Collaboration</h3>
+                            <ul>
+                                <li>Git</li>
+                                <li>GitHub</li>
+                                <li>Agile/SCRUM Methodologies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Systems & Security</h2>
+                    <div class="skill-grid">
+                        <div class="skill-category">
+                            <h3>Operating Systems</h3>
+                            <ul>
+                                <li>Windows (Advanced)</li>
+                                <li>Linux/Unix</li>
+                                <li>macOS</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Security Tools</h3>
+                            <ul>
+                                <li>Wireshark</li>
+                                <li>Nmap</li>
+                                <li>VMware</li>
+                                <li>Cisco Packet Tracer</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Additional Skills</h2>
+                    <div class="skill-grid">
+                        <div class="skill-category">
+                            <h3>Hardware & Electronics</h3>
+                            <ul>
+                                <li>Arduino</li>
+                                <li>Raspberry Pi</li>
+                                <li>PC Hardware Diagnostics</li>
+                                <li>Circuit Design</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Multimedia & Design</h3>
+                            <ul>
+                                <li>Adobe Dreamweaver</li>
+                                <li>Adobe Photoshop</li>
+                                <li>Adobe Premiere</li>
+                                <li>OBS Studio</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
