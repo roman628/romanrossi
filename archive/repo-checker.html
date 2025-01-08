@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checking Repository Access...</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        .debug-info {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .debug-log {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin-top: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .control-panel {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 8px 16px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 4px;
+            background: #3498db;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-info">
+        <h2>Repository Access Check Debug Info</h2>
+        <p><strong>Repository URL:</strong> <span id="repo-url">Loading...</span></p>
+        <p><strong>Status:</strong> <span id="status">Initializing...</span></p>
+        <div class="debug-log" id="debug-log"></div>
+    </div>
+
+    <div class="control-panel">
+        <button onclick="proceedToRepo()">Proceed to Repository</button>
+        <button onclick="proceedToNoAccess()">Go to No Access Page</button>
+    </div>
+
+    <iframe id="repo-frame"></iframe>
+
+    <script>
+        let repoUrl = '';
+        const debugLog = document.getElementById('debug-log');
+        
+        function log(message) {
+            const timestamp = new Date().toISOString().split('T')[1].split('.')[0];
+            debugLog.textContent += `[${timestamp}] ${message}\n`;
+            console.log(message);
+        }
+
+        function proceedToRepo() {
+            window.location.href = repoUrl;
+        }
+
+        function proceedToNoAccess() {
+            window.location.href = '/no-access.html?repo=' + encodeURIComponent(repoUrl);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the repository URL from the query parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            repoUrl = urlParams.get('repo');
+            
+            document.getElementById('repo-url').textContent = repoUrl || 'No URL provided';
+            
+            if (!repoUrl) {
+                log('No repository URL provided in query parameters');
+                document.getElementById('status').textContent = 'Error: No URL provided';
+                return;
+            }
+
+            log('Starting repository access check...');
+            document.getElementById('status').textContent = 'Loading repository...';
+
+            // Set up the iframe
+            const iframe = document.getElementById('repo-frame');
+            iframe.src = repoUrl;
+
+            // Listen for iframe load event
+            iframe.onload = function() {
+                log('iframe loaded');
+                document.getElementById('status').textContent = 'iframe loaded - checking content...';
+                
+                try {
+                    const iframeDoc = iframe.contentWindow.document;
+                    const pageTitle = iframeDoc.title;
+                    log('Page title: ' + pageTitle);
+                    
+                    if (pageTitle.includes('Page not found')) {
+                        log('404 page detected');
+                        document.getElementById('status').textContent = '404 page detected - no access';
+                    } else {
+                        log('Repository page loaded successfully');
+                        document.getElementById('status').textContent = 'Repository accessible';
+                    }
+                } catch (e) {
+                    log('Error accessing iframe content: ' + e.message);
+                    document.getElementById('status').textContent = 'Error: ' + e.message;
+                }
+            };
+
+            // Add error handler
+            iframe.onerror = function(error) {
+                log('iframe error: ' + error);
+                document.getElementById('status').textContent = 'Error loading repository';
+            };
+        });
+    </script>
+</body>
+</html>

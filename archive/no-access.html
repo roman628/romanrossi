@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repository Access Required</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .access-container {
+            max-width: 600px;
+            margin: 4rem auto;
+            padding: 2rem;
+            text-align: center;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .access-container h1 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+        }
+        .access-container p {
+            color: #495057;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .contact-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+            transition: background-color 0.2s;
+        }
+        .contact-button:hover {
+            background-color: #2980b9;
+        }
+        .repo-info {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            font-family: monospace;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button class="mobile-menu-button" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="access-container">
+            <h1>Repository Access Required</h1>
+            <p>This repository is private and requires specific access permissions to view. If you're interested in reviewing the code or collaborating on this project, please feel free to contact me.</p>
+            <p>I'm always open to discussing my work with other developers and potential collaborators!</p>
+            <div class="repo-info">
+                <p>Requested Repository:</p>
+                <span id="repo-url"></span>
+            </div>
+            <a href="contact.html" class="contact-button">Contact Me</a>
+        </div>
+    </main>
+
+    <script>
+        // Display the repository URL that was requested
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const repoUrl = urlParams.get('repo');
+            if (repoUrl) {
+                document.getElementById('repo-url').textContent = repoUrl;
+            }
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

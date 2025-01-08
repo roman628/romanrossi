@@ -72,6 +72,60 @@
         .repo-link:hover {
             text-decoration: underline;
         }
+
+        .repo-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .modal-buttons button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .modal-buttons .proceed-btn {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .modal-buttons .cancel-btn {
+            background-color: #e0e0e0;
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+        }
     </style>
 </head>
 
@@ -135,7 +189,7 @@
             `;
 
             if (project.repoLink) {
-                cardContent += `<a href="${project.repoLink}" class="repo-link" target="_blank">View Repository</a>`;
+                cardContent += `<a href="#" class="repo-link" onclick="showRepoModal('${project.repoLink}'); return false;">View Repository</a>`;
             }
 
             card.innerHTML = cardContent;
@@ -186,7 +240,51 @@
         document.querySelector('.mobile-menu-button').addEventListener('click', function() {
             document.querySelector('nav ul').classList.toggle('show');
         });
+
+        // Add these functions to handle the modal
+        let currentRepoUrl = '';
+
+        function showRepoModal(repoUrl) {
+            currentRepoUrl = repoUrl;
+            document.getElementById('repoModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('repoModal').style.display = 'none';
+        }
+
+        function proceedToRepo() {
+            if (currentRepoUrl) {
+                window.open(currentRepoUrl, '_blank');
+            }
+            document.getElementById('repoModal').style.display = 'none';
+        }
+
+        // Close modal when clicking the X or outside the modal
+        document.querySelector('.close-modal').onclick = function() {
+            document.getElementById('repoModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('repoModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
     </script>
+
+    <div id="repoModal" class="repo-modal">
+        <div class="modal-content">
+            <span onclick="closeModal()" class="close-modal">&times;</span>
+            <h2>Repository Access Notice</h2>
+            <p>This repository is private and requires specific access permissions. If you don't have access, you'll see a GitHub 404 page.</p>
+            <p>Do you want to:</p>
+            <div class="modal-buttons">
+                <button class="cancel-btn" onclick="window.location.href='contact.html'">Contact for Access</button>
+                <button class="proceed-btn" onclick="proceedToRepo()">Proceed to Repository</button>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
