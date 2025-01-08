@@ -36,6 +36,13 @@
       "repoLink": "https://github.com/roman628/Clipboard-Processing-Tools"
     },
     {
+      "title": "HTML Clipboard Analyzer",
+      "category": "automation",
+      "description": "Automated tool for analyzing and extracting structured information from clipboard HTML content. Features intelligent parsing of web elements, interactive element identification, and formatted output for web automation tasks.",
+      "tags": ["Python", "HTML Processing", "Web Automation", "Clipboard Integration"],
+      "repoLink": "https://github.com/roman628/Clipboard-Processing-Tools"
+    },
+    {
       "title": "Employee Schedule Bid Optimizer",
       "category": "automation",
       "description": "Automated schedule parsing and optimization tool for airline employee bidding system.",
@@ -118,6 +125,41 @@
       "description": "Interactive Python application using PyQt5 for solving word hunt puzzles. Features multi-threaded processing, custom Trie data structure, and an intuitive GUI with path visualization.",
       "tags": ["Python", "PyQt5", "Algorithms", "GUI"],
       "repoLink": null
+    },
+    {
+      "title": "AutoTrader",
+      "category": "automation",
+      "description": "An algorithm that collects stock market data and performs automated trading based on custom strategies and technical analysis.",
+      "tags": ["Python", "API Integration", "Data Analysis", "Automation"],
+      "repoLink": "https://github.com/roman628/AutoTrader"
+    },
+    {
+      "title": "InQuizitive Bot",
+      "category": "automation",
+      "description": "An automated tool for enhancing interaction with the InQuizitive learning platform, featuring intelligent response handling and progress tracking.",
+      "tags": ["Python", "Web Automation", "Education", "Selenium"],
+      "repoLink": "https://github.com/roman628/InQuizitive-bot"
+    },
+    {
+      "title": "System Analysis and Setup Script",
+      "category": "automation",
+      "description": "Automated system configuration and analysis tool for streamlining computer setup and maintenance processes.",
+      "tags": ["Python", "System Utils", "Automation"],
+      "repoLink": "https://github.com/roman628/SysSetupScript"
+    },
+    {
+      "title": "RCLI",
+      "category": "automation",
+      "description": "Custom command-line interface tool for personal task automation and system management.",
+      "tags": ["Python", "CLI", "System Utils"],
+      "repoLink": "https://github.com/roman628/RCLI"
+    },
+    {
+      "title": "Genius Album Lyrics Downloader",
+      "category": "automation",
+      "description": "Python-based tool for automated lyrics extraction from Genius.com albums. Features batch processing of entire albums, intelligent rate limiting, and organized output formatting with proper song metadata preservation.",
+      "tags": ["Python", "Web Scraping", "API Integration", "Content Extraction"],
+      "repoLink": "https://github.com/roman628/Content-Extraction"
     }
   ]
 }
