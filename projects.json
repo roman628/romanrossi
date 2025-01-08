@@ -1,0 +1,123 @@
+{
+  "projects": [
+    {
+      "title": "Audio Transcription Tool",
+      "category": "major",
+      "description": "Multi-threaded Python application with GUI for efficient audio-to-text conversion, featuring speech recognition and progress tracking.",
+      "tags": ["Python", "Multi-threading", "GUI"],
+      "repoLink": null
+    },
+    {
+      "title": "Encrypted Text Editor",
+      "category": "major",
+      "description": "Java-based text editor implementing AES encryption and secure file handling with an intuitive GUI interface.",
+      "tags": ["Java", "Encryption", "GUI"],
+      "repoLink": null
+    },
+    {
+      "title": "MindLoop Personal Data Tracker",
+      "category": "major",
+      "description": "Comprehensive Java application for personal data tracking featuring advanced encryption and modular architecture.",
+      "tags": ["Java", "Data Analysis", "Encryption"],
+      "repoLink": null
+    },
+    {
+      "title": "PDF Processing Suite",
+      "category": "automation",
+      "description": "Collection of Python scripts for PDF manipulation including text extraction, highlighting changes, and merging documents.",
+      "tags": ["Python", "PDF Processing", "Automation"],
+      "repoLink": "https://github.com/roman628/Content-Processing-Suite"
+    },
+    {
+      "title": "Screen OCR Tool",
+      "category": "automation",
+      "description": "Background service for instant OCR text extraction from screen captures using hotkeys.",
+      "tags": ["Python", "OCR", "System Integration"],
+      "repoLink": "https://github.com/roman628/Clipboard-Processing-Tools"
+    },
+    {
+      "title": "Employee Schedule Bid Optimizer",
+      "category": "automation",
+      "description": "Automated schedule parsing and optimization tool for airline employee bidding system.",
+      "tags": ["Python", "Web Scraping", "GUI"],
+      "repoLink": null
+    },
+    {
+      "title": "CS 240 Multiset Implementation",
+      "category": "academic",
+      "description": "Advanced Java project implementing generic types and custom data structures.",
+      "tags": ["Java", "Data Structures", "Generics"],
+      "repoLink": null
+    },
+    {
+      "title": "Y86 CPU Simulator",
+      "category": "academic",
+      "description": "Complete implementation of CPU simulator including loader, disassembler, and interpreter.",
+      "tags": ["C++", "Assembly", "Systems"],
+      "repoLink": null
+    },
+    {
+      "title": "Email Summary System",
+      "category": "automation",
+      "description": "Advanced email management tool utilizing the Outlook API and AI for automated email summarization, filtering, and organization with a comprehensive statistics dashboard.",
+      "tags": ["Python", "AI Integration", "API", "Automation"],
+      "repoLink": "https://github.com/roman628/Email-Management-System"
+    },
+    {
+      "title": "Disk Analysis Suite",
+      "category": "automation",
+      "description": "Command-line utility for comprehensive disk space analysis, featuring file type statistics, large file identification, and customizable exclusion paths with human-readable output.",
+      "tags": ["Python", "System Utils", "CLI"],
+      "repoLink": "https://github.com/roman628/Directory-Analysis-Tools"
+    },
+    {
+      "title": "Automated Backup System",
+      "category": "automation",
+      "description": "Robust backup solution with intelligent file handling, progress tracking, and detailed logging. Features selective backup with exclusion paths and administrative access detection.",
+      "tags": ["Python", "System Utils", "File Management"],
+      "repoLink": "https://github.com/roman628/Backup-System"
+    },
+    {
+      "title": "NFL Sports Betting & Fantasy Platform",
+      "category": "major",
+      "description": "Comprehensive web application for NFL sports betting and fantasy football analysis, featuring real-time data integration, advanced statistics, and predictive modeling.",
+      "tags": ["JavaScript", "HTML5", "CSS3", "ESPN API"],
+      "repoLink": null
+    },
+    {
+      "title": "Sports Analytics Dashboard",
+      "category": "webapps",
+      "description": "Real-time sports data visualization platform featuring moneyline predictions, point spread analysis, and fantasy lineup optimization using the ESPN NFL API.",
+      "tags": ["JavaScript", "Data Analysis", "API Integration"],
+      "repoLink": null
+    },
+    {
+      "title": "PSYC Textbook Content Extractor",
+      "category": "automation",
+      "description": "Selenium-based web scraper that automatically navigates through university authentication, extracts textbook content chapter by chapter, and compiles it into organized text files. Features automated DUO handling and smart content parsing.",
+      "tags": ["Python", "Selenium", "BeautifulSoup", "Web Scraping"],
+      "repoLink": "https://github.com/roman628/Content-Extraction"
+    },
+    {
+      "title": "Interactive Flashcard Scraper",
+      "category": "automation",
+      "description": "Automated tool for extracting digital flashcards from online study materials. Features interactive card flipping simulation and intelligent content extraction, saving study materials in an easily reviewable format.",
+      "tags": ["Python", "Selenium", "Web Automation", "Education"],
+      "repoLink": "https://github.com/roman628/Content-Extraction"
+    },
+    {
+      "title": "YouTube Playlist Transcript Collector",
+      "category": "automation",
+      "description": "Comprehensive tool for downloading and organizing video transcripts from YouTube playlists. Creates both individual transcripts and a master compilation, with smart title parsing and error handling.",
+      "tags": ["Python", "YouTube API", "Content Extraction", "File Management"],
+      "repoLink": "https://github.com/roman628/Content-Extraction"
+    },
+    {
+      "title": "Word Hunt Solver",
+      "category": "automation",
+      "description": "Interactive Python application using PyQt5 for solving word hunt puzzles. Features multi-threaded processing, custom Trie data structure, and an intuitive GUI with path visualization.",
+      "tags": ["Python", "PyQt5", "Algorithms", "GUI"],
+      "repoLink": null
+    }
+  ]
+}

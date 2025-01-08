@@ -13,6 +13,7 @@
             border-radius: 8px;
             padding: 1.5rem;
             transition: transform 0.2s;
+            margin-bottom: 1rem;
         }
 
         .project-card:hover {
@@ -39,6 +40,7 @@
             justify-content: center;
             gap: 1rem;
             margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
 
         .category-nav button {
@@ -52,6 +54,23 @@
 
         .category-nav button:hover {
             background: #2980b9;
+        }
+
+        .project-grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+
+        .repo-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #0366d6;
+            text-decoration: none;
+        }
+
+        .repo-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -85,7 +104,7 @@
                 </div>
 
                 <div class="category-nav">
-                    <button onclick="filterProjects('all')">All Projects</button>
+                    <button onclick="filterProjects('all')" class="active">All Projects</button>
                     <button onclick="filterProjects('major')">Major Projects</button>
                     <button onclick="filterProjects('automation')">Automation Tools</button>
                     <button onclick="filterProjects('academic')">Academic Projects</button>
@@ -93,213 +112,48 @@
                     <!--button onclick="filterProjects('scraping')">Web Scraping</button-->
                 </div>
 
-                <div class="project-grid">
-                    <!-- Major Projects -->
-                    <div class="project-card" data-category="major">
-                        <h3>Audio Transcription Tool</h3>
-                        <p>Multi-threaded Python application with GUI for efficient audio-to-text conversion, featuring
-                            speech recognition and progress tracking.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Multi-threading</span>
-                            <span class="tag">GUI</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="major">
-                        <h3>Encrypted Text Editor</h3>
-                        <p>Java-based text editor implementing AES encryption and secure file handling with an intuitive
-                            GUI interface.</p>
-                        <div class="project-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">Encryption</span>
-                            <span class="tag">GUI</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="major">
-                        <h3>MindLoop Personal Data Tracker</h3>
-                        <p>Comprehensive Java application for personal data tracking featuring advanced encryption and
-                            modular architecture.</p>
-                        <div class="project-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">Data Analysis</span>
-                            <span class="tag">Encryption</span>
-                        </div>
-                    </div>
-
-                    <!-- Automation Tools -->
-                    <div class="project-card" data-category="automation">
-                        <h3>PDF Processing Suite</h3>
-                        <p>Collection of Python scripts for PDF manipulation including text extraction, highlighting
-                            changes, and merging documents.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">PDF Processing</span>
-                            <span class="tag">Automation</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="automation">
-                        <h3>Screen OCR Tool</h3>
-                        <p>Background service for instant OCR text extraction from screen captures using hotkeys.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">OCR</span>
-                            <span class="tag">System Integration</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="automation">
-                        <h3>Employee Schedule Bid Optimizer</h3>
-                        <p>Automated schedule parsing and optimization tool for airline employee bidding system.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Web Scraping</span>
-                            <span class="tag">GUI</span>
-                        </div>
-                    </div>
-
-                    <!-- Academic Projects -->
-                    <div class="project-card" data-category="academic">
-                        <h3>CS 240 Multiset Implementation</h3>
-                        <p>Advanced Java project implementing generic types and custom data structures.</p>
-                        <div class="project-tags">
-                            <span class="tag">Java</span>
-                            <span class="tag">Data Structures</span>
-                            <span class="tag">Generics</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="academic">
-                        <h3>Y86 CPU Simulator</h3>
-                        <p>Complete implementation of CPU simulator including loader, disassembler, and interpreter.</p>
-                        <div class="project-tags">
-                            <span class="tag">C++</span>
-                            <span class="tag">Assembly</span>
-                            <span class="tag">Systems</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="automation">
-                        <h3>Email Summary System</h3>
-                        <p>Advanced email management tool utilizing the Outlook API and AI for automated email
-                            summarization, filtering, and organization with a comprehensive statistics dashboard.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">AI Integration</span>
-                            <span class="tag">API</span>
-                            <span class="tag">Automation</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="automation">
-                        <h3>Disk Analysis Suite</h3>
-                        <p>Command-line utility for comprehensive disk space analysis, featuring file type statistics,
-                            large file identification, and customizable exclusion paths with human-readable output.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">System Utils</span>
-                            <span class="tag">CLI</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="automation">
-                        <h3>Automated Backup System</h3>
-                        <p>Robust backup solution with intelligent file handling, progress tracking, and detailed
-                            logging. Features selective backup with exclusion paths and administrative access detection.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">System Utils</span>
-                            <span class="tag">File Management</span>
-                        </div>
-                    </div>
-
-
-
-                    <div class="project-card" data-category="major">
-                        <h3>NFL Sports Betting & Fantasy Platform</h3>
-                        <p>Comprehensive web application for NFL sports betting and fantasy football analysis, featuring
-                            real-time data integration, advanced statistics, and predictive modeling.</p>
-                        <div class="project-tags">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
-                            <span class="tag">ESPN API</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="webapps">
-                        <h3>Sports Analytics Dashboard</h3>
-                        <p>Real-time sports data visualization platform featuring moneyline predictions, point spread
-                            analysis, and fantasy lineup optimization using the ESPN NFL API.</p>
-                        <div class="project-tags">
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Data Analysis</span>
-                            <span class="tag">API Integration</span>
-                        </div>
-                    </div>
-
-                    <!-- Web Scraping Projects -->
-                    <div class="project-card" data-category="automation">
-                        <h3>PSYC Textbook Content Extractor</h3>
-                        <p>Selenium-based web scraper that automatically navigates through university authentication,
-                            extracts textbook content chapter by chapter, and compiles it into organized text files.
-                            Features automated DUO handling and smart content parsing.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Selenium</span>
-                            <span class="tag">BeautifulSoup</span>
-                            <span class="tag">Web Scraping</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="automation">
-                        <h3>Interactive Flashcard Scraper</h3>
-                        <p>Automated tool for extracting digital flashcards from online study materials. Features
-                            interactive card flipping simulation and intelligent content extraction, saving study
-                            materials in an easily reviewable format.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Selenium</span>
-                            <span class="tag">Web Automation</span>
-                            <span class="tag">Education</span>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="automation">
-                        <h3>YouTube Playlist Transcript Collector</h3>
-                        <p>Comprehensive tool for downloading and organizing video transcripts from YouTube playlists.
-                            Creates both individual transcripts and a master compilation, with smart title parsing and
-                            error handling.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">YouTube API</span>
-                            <span class="tag">Content Extraction</span>
-                            <span class="tag">File Management</span>
-                        </div>
-                    </div>
-                    <div class="project-card" data-category="automation">
-                        <h3>Word Hunt Solver</h3>
-                        <p>Interactive Python application using PyQt5 for solving word hunt puzzles. Features
-                            multi-threaded processing, custom Trie data structure, and an intuitive GUI with path
-                            visualization.</p>
-                        <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">PyQt5</span>
-                            <span class="tag">Algorithms</span>
-                            <span class="tag">GUI</span>
-                        </div>
-                    </div>
+                <div id="project-grid" class="project-grid">
+                    <!-- Projects will be dynamically loaded here -->
                 </div>
             </div>
         </section>
     </main>
 
     <script>
+        // Function to create a project card
+        function createProjectCard(project) {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.setAttribute('data-category', project.category);
+
+            let cardContent = `
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+                <div class="project-tags">
+                    ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                </div>
+            `;
+
+            if (project.repoLink) {
+                cardContent += `<a href="${project.repoLink}" class="repo-link" target="_blank">View Repository</a>`;
+            }
+
+            card.innerHTML = cardContent;
+            return card;
+        }
+
+        // Function to filter projects
         function filterProjects(category) {
             const projects = document.querySelectorAll('.project-card');
+            
+            // Update active button
+            document.querySelectorAll('.category-nav button').forEach(button => {
+                button.classList.remove('active');
+                if (button.textContent.toLowerCase().includes(category)) {
+                    button.classList.add('active');
+                }
+            });
+
             projects.forEach(project => {
                 if (category === 'all' || project.dataset.category === category) {
                     project.style.display = 'block';
@@ -308,8 +162,27 @@
                 }
             });
         }
-    </script>
-    <script>
+
+        // Load projects from JSON file
+        async function loadProjects() {
+            try {
+                const response = await fetch('projects.json');
+                const data = await response.json();
+                const projectGrid = document.getElementById('project-grid');
+
+                data.projects.forEach(project => {
+                    const card = createProjectCard(project);
+                    projectGrid.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Error loading projects:', error);
+            }
+        }
+
+        // Load projects when the page loads
+        document.addEventListener('DOMContentLoaded', loadProjects);
+
+        // Mobile menu toggle
         document.querySelector('.mobile-menu-button').addEventListener('click', function() {
             document.querySelector('nav ul').classList.toggle('show');
         });
