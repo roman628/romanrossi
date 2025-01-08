@@ -9,12 +9,18 @@
 </head>
 <body>
     <nav>
+        <button class="mobile-menu-button" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="resume.html">Resume</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -29,6 +35,7 @@
                 <div class="cta-buttons">
                     <a href="projects.html" class="button">View My Work</a>
                     <a href="resume.html" class="button">Resume</a>
+                    <a href="https://linkedin.com/in/roman-f-rossi/" target="_blank" class="button">Linkedin</a>
                 </div>
             </div>
         </section>
@@ -42,5 +49,10 @@
             </div>
         </section>
     </main>
+    <script>
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+    </script>
 </body>
 </html>

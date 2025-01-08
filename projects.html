@@ -58,12 +58,18 @@
 
 <body>
     <nav>
+        <button class="mobile-menu-button" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="resume.html">Resume</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -71,6 +77,12 @@
         <section class="section">
             <div class="container">
                 <h1>My Projects</h1>
+
+                <div class="policy-notice" style="text-align: center; margin: 1rem 0 2rem; padding: 1rem; background-color: #f8f9fa; border-radius: 8px;">
+                    <p style="margin: 0; color: #495057;">
+                        <strong>Code Access Policy:</strong> I'm happy to provide access to my projects upon request. Please <a href="contact.html">contact me</a> if you'd like to discuss a collaboration or review specific code.
+                    </p>
+                </div>
 
                 <div class="category-nav">
                     <button onclick="filterProjects('all')">All Projects</button>
@@ -296,6 +308,11 @@
                 }
             });
         }
+    </script>
+    <script>
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
     </script>
 </body>
 

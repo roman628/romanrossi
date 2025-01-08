@@ -35,12 +35,18 @@
 </head>
 <body>
     <nav>
+        <button class="mobile-menu-button" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="resume.html">Resume</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -63,7 +69,7 @@
                             <div>
                                 <p>Python</p>
                                 <div class="skill-bar">
-                                    <div class="skill-level" style="width: 90%;"></div>
+                                    <div class="skill-level" style="width: 80%;"></div>
                                 </div>
                             </div>
                             <div>
@@ -79,7 +85,7 @@
                             <div>
                                 <p>JavaScript</p>
                                 <div class="skill-bar">
-                                    <div class="skill-level" style="width: 80%;"></div>
+                                    <div class="skill-level" style="width: 70%;"></div>
                                 </div>
                             </div>
                             <div>
@@ -91,7 +97,7 @@
                             <div>
                                 <p>SQL</p>
                                 <div class="skill-bar">
-                                    <div class="skill-level" style="width: 75%;"></div>
+                                    <div class="skill-level" style="width: 65%;"></div>
                                 </div>
                             </div>
                         </div>
@@ -174,5 +180,10 @@
             </div>
         </section>
     </main>
+    <script>
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
