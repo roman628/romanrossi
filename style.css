@@ -22,11 +22,9 @@ body {
 
 nav {
     background-color: var(--primary-color);
-    padding: 1rem;
-    position: fixed;
+    padding: 0.75rem 1rem;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 1000;
 }
 
@@ -111,54 +109,24 @@ h1 {
 
 @media (max-width: 768px) {
     /* Navigation */
-    nav {
-        padding: 0.5rem 1rem;
-    }
-
     nav ul {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: var(--primary-color);
         flex-direction: column;
         align-items: center;
-        padding: 1rem 0;
-        margin: 0;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        gap: 1rem;
     }
 
-    nav ul.show {
-        display: flex;
-    }
-
-    nav ul li {
+    nav li {
         width: 100%;
         text-align: center;
-        padding: 0.5rem 0;
-    }
-
-    nav ul li a {
-        display: block;
-        padding: 0.5rem 0;
-        width: 100%;
-    }
-
-    .mobile-menu-button {
-        display: flex;
-        position: relative;
-        right: 0;
-        top: 0;
     }
 
     /* General layout */
     .section {
-        padding: 2rem 0;
+        padding: 2rem 0; /* Reduced padding on mobile */
     }
 
     .card {
-        padding: 1.5rem;
+        padding: 1.5rem; /* Smaller padding on mobile */
         margin-bottom: 1.5rem;
     }
 
@@ -168,7 +136,7 @@ h1 {
     }
 
     .profile-img {
-        width: 150px;
+        width: 150px; /* Smaller profile image on mobile */
         height: 150px;
     }
 
@@ -202,11 +170,6 @@ h1 {
 
     .interest-grid {
         grid-template-columns: 1fr;
-    }
-
-    /* Add padding to main content to account for fixed nav */
-    main {
-        padding-top: 60px;
     }
 }
 
@@ -274,19 +237,47 @@ h1 {
     display: none;
     flex-direction: column;
     justify-content: space-around;
-    width: 30px;
-    height: 25px;
+    width: 35px;
+    height: 30px;
     background: transparent;
     border: none;
     cursor: pointer;
     padding: 0;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.2rem;
     z-index: 1001;
 }
 
 .bar {
     width: 100%;
-    height: 2px;
+    height: 3px;
     background-color: white;
     border-radius: 10px;
     transition: all 0.3s linear;
+    margin: 2px 0;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-button {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav {
+        padding: 1.5rem 1rem;
+        min-height: 18px;
+    }
 }
