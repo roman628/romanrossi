@@ -8,6 +8,18 @@
       "repoLink": null
     },
     {
+      "title": "Audio Processing Tools",
+      "category": "automation",
+      "description": "Suite of audio tools including real-time speech-to-text transcription, TTS, and voice conversion using RVC models. Features GPU acceleration with faster-whisper and multithreaded batch processing.",
+      "tags": [
+        "Python",
+        "Whisper API",
+        "Audio Processing",
+        "GPU Acceleration"
+      ],
+      "repoLink": null
+    },
+    {
       "title": "Encrypted Text Editor",
       "category": "major",
       "description": "Java-based text editor implementing AES encryption and secure file handling with an intuitive GUI interface.",
@@ -17,8 +29,8 @@
     {
       "title": "MindLoop Personal Data Tracker",
       "category": "major",
-      "description": "Comprehensive Java application for personal data tracking featuring advanced encryption and modular architecture.",
-      "tags": ["Java", "Data Analysis", "Encryption"],
+      "description": "Comprehensive Java application for personal data tracking and analysis with AES-256 encryption. Modular architecture with 34 classes across 5 packages following MVC pattern.",
+      "tags": ["Java", "Swing", "AES Encryption"],
       "repoLink": null
     },
     {
@@ -129,7 +141,7 @@
     {
       "title": "AutoTrader",
       "category": "automation",
-      "description": "An algorithm that collects stock market data and performs automated trading based on custom strategies and technical analysis.",
+      "description": "Automated trading platform integrating Alpaca API with Claude AI for real-time market analysis and execution. Features multi-server MCP architecture, PDT tracking, and risk management systems.",
       "tags": ["Python", "API Integration", "Data Analysis", "Automation"],
       "repoLink": "https://github.com/roman628/AutoTrader"
     },
@@ -150,8 +162,8 @@
     {
       "title": "RCLI",
       "category": "automation",
-      "description": "Custom command-line interface tool for personal task automation and system management.",
-      "tags": ["Python", "CLI", "System Utils"],
+      "description": "Custom command-line interface tool managing 50+ utility commands for personal task automation and system management. Features plugin architecture with dynamic command registration and LLM-powered semantic search.",
+      "tags": ["Python", "CLI", "System Utils", "LLM Integration"],
       "repoLink": "https://github.com/roman628/RCLI"
     },
     {

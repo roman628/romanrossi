@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Roman Rossi - Computer Science Student</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .right-now {
+            background: #eff6ff;
+            border-radius: 8px;
+            color: #1e40af;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button class="mobile-menu-button" aria-label="Toggle menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <img src="assets/profile.png" alt="Roman Rossi" class="profile-img">
+                <h1>Roman Rossi</h1>
+                <h2>Computer Science Student</h2>
+                <p>Third-year Computer Science student at James Madison University</p>
+                <p>Graduating Fall 2025</p>
+                <div class="cta-buttons">
+                    <a href="projects.html" class="button">View My Work</a>
+                    <a href="resume.html" class="button">Resume</a>
+                    <a href="https://linkedin.com/in/roman-f-rossi/" target="_blank" class="button">Linkedin</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="card">
+                    <h2>Quick Overview</h2>
+                    <p>I'm a passionate computer science student with strong programming skills in Java, Python, C++, and web technologies. I specialize in creating efficient solutions and have experience with multi-threaded programming, web development, and software engineering.</p>
+                    <div class="right-now">
+                        <strong>What I'm working on right now:</strong> Currently working remotely for Data Annotation training AI.  Exploring the future of AI automation, writing scripts and full stack web apps for automation, life improvement, and content creation.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const navMenu = document.querySelector('nav ul');
+            
+            // Toggle menu when button is clicked
+            mobileMenuButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navMenu.classList.toggle('show');
+                this.setAttribute('aria-expanded', 
+                    this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
+                );
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!navMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                    navMenu.classList.remove('show');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Close menu when clicking a link
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('show');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

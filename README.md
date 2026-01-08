@@ -9,3 +9,4 @@ constantly updated professional website with
 website link:
 https://roman628.github.io/romanrossi/
 
+![My Website QR Code](assets/my-website-qrcode.png)
