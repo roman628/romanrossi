@@ -43,7 +43,7 @@ body {
 }
 
 /* Animated gradient border around viewport */
-body::before {
+/* body::before {
     content: '';
     position: fixed;
     top: 0;
@@ -57,7 +57,7 @@ body::before {
     mask-composite: exclude;
     pointer-events: none;
     z-index: 9999;
-}
+} */
 
 /* Container */
 .container {
